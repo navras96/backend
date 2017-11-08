@@ -1,5 +1,3 @@
 <?php
 
-class pokemonModel extends Model {
-
-}
+class pokemonModel extends Model {}

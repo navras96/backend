@@ -1,5 +1,3 @@
 <?php
 
-class userModel extends  Model {
-
-}
+class userModel extends  Model {}

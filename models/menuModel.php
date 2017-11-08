@@ -1,5 +1,3 @@
 <?php
 
-class menuModel extends Model {
-
-}
+class menuModel extends Model {}
