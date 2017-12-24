@@ -1,13 +1,18 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app='app'>
 <head>
 	<title>Start Game</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-route.js"></script>
+    <script src="js/lib/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="sortcut icon" type="image/x-icon" href="favicon.ico">
     <?php require("menu.php"); ?>
 </head>
-<body background="../images/backgr.jpg" class="body">
+<body background="images/backgr.jpg" class="body">
 <header class="header">
     <div class="logo">
         <span class="logo__icon"></span>

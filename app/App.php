@@ -48,7 +48,9 @@ class App{
 		$this->request=$_GET;
 	}
 
-
+    public function getController(){
+	    return $this->controller;
+    }
 	// запускаем приложение
 	public function run(){
 		// определяем название класса контроллера например (usersController)

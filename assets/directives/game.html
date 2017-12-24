@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="gamefield">
+    <div class="status">
+        <div class="status__level">LEVEL: {{level}}</div>
+        <div class="status__score">SCORE: {{score}}</div>
+    </div>
+
+    <div class="field">
+        <div ng-click="nextLevel()" class="ball" style="left:{{50+ballPos.X}}%;top:{{20+ballPos.Y}}%;width: {{size}}px;height:{{size}}px;"></div>
+    </div>
+</div>

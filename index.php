@@ -18,15 +18,19 @@ spl_autoload_register(function ($class_name) {
 define('BASE_DIR', dirname(__FILE__));
 define('DS', DIRECTORY_SEPARATOR);
 define('DATA_FOLDER',BASE_DIR.DS.'data');
- //сonst только в классах
+//сonst только в классах
 
 $app=new App(); // создаем экземпляр приложения
 $response = $app->run();// запускаем приложение. Его ответ помещаем в переменную
 
-if($response){
+if ($app->getController() =='index'){
+    echo $response;
+}
+elseif($response){
 	// если приложение ответило данными - выводим их
-	header('Content-Type: application/json');     // + заголовок, ответ будет в json
+    header('Content-Type: application/json');     // + заголовок, ответ будет в json
 	echo json_encode($response);
-}else{
+}
+else{
 	header("HTTP/1.0 404 Not Found"); // если ответило false то выводим ошибку
 }

@@ -1,3 +1,8 @@
-<form class="form" action="#">
-    <button class="form__button"><b>Start</b></button>
-</form>
+<div ng-controller="status">
+    <form ng-if="visiable" class="form" action="#">
+        <button ng-click='visiable=true' class="form__button"><b>Start</b></button>
+    </form>
+
+    <game ng-if="visiable"></game>
+   <!-- <end ng-if="!gameover"></end> -->
+</div>

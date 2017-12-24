@@ -1,3 +1,5 @@
 <?php
 
-class indexModel extends Model {}
+class indexModel extends Model {
+
+}

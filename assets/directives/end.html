@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div id="win">
+    <div class="overlay"></div>
+    <div class="visible">
+        <h2>Конец игры! Ваши результаты</h2>
+        <div class="content">
+            <div ng-controller='status'>
+                <span>Введите Ваше имя:</span>
+                <input ng-model='name' type="text" size="40">
+                <button ng-click='saveResult()'>Сохранить</button>
+                <button type="button" onClick="getElementById('win').style.display='none';">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@
 class indexController extends Controller {
 
 	public function index(){
-		$message = 'This in index page. This message is in controllers/indexController.php file';
+		$message = file_get_contents(BASE_DIR.'/main.php');
 		$this->setResponce($message);
 	}
 }
