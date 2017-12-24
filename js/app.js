@@ -5,14 +5,15 @@ app.controller('stop', function($scope, $log, $interval){
         $scope.$emit('test');
     }
 });
-app.controller('status', function($scope, $log, $interval){
+app.controller('status', function($scope, $log, $interval, $http){
+    $scope.user = {};
     $scope.gameover = false;
-    $scope.name='';
     $scope.level=0;
     $scope.score=0;
     $scope.step=0;
     $scope.visiable=false;
     $scope.$on('test', function() {
+        $http.post('http://webdev/index.php?controller=user',  {id:"1",name: $scope.user.name,score:$scope.score});
         $scope.gameover = false;
         $scope.level=0;
         $scope.score=0;
@@ -23,7 +24,6 @@ app.controller('status', function($scope, $log, $interval){
                         'Y':20*Math.cos(tic/20)};
 
     });
-
 
     var tictac, tic=0;
     $scope.ballPos={'X':50*Math.sin(tic/60),
@@ -39,7 +39,6 @@ app.controller('status', function($scope, $log, $interval){
                 setTimeout(t, delta);
             } else {
                 $scope.gameover = true;
-                $interval.cancel($scope.nextLevel);
             }
         })();
     }
@@ -59,20 +58,6 @@ app.controller('status', function($scope, $log, $interval){
             $scope.ballPos.X=50*Math.sin(tic/60);
             $scope.ballPos.Y=20*Math.cos(tic/20);
         },50);
-    };
-
-    $scope.stop = function(){
-        $interval.cancel(tictac);
-    };
-
-
-    $scope.saveResult = function(){
-        /*
-        сохранить результаты игры:
-          $scope.name;
-          $scope.level;
-          $scope.score;
-        */
     };
 });
 
