@@ -2,12 +2,13 @@
     <div class="overlay"></div>
     <div class="visible">
         <h2>Конец игры! Ваши результаты</h2>
-        <div class="content">
+        <span>Level: {{level}}; Scope: {{score}}</span>
+        <div class="end">
             <div ng-controller='status'>
                 <span>Введите Ваше имя:</span>
-                <input ng-model='name' type="text" size="40">
-                <button ng-click='saveResult()'>Сохранить</button>
-                <button type="button" onClick="getElementById('win').style.display='none';">Закрыть</button>
+                <input ng-model='name' type="text">
+                <button ng-click='saveResult()' type="button">Сохранить</button>
+                <button ng-click='visiable=false' type="button" ng-show="gameover">Закрыть</button>
             </div>
         </div>
     </div>

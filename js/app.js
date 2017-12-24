@@ -17,7 +17,7 @@ app.controller('status', function($scope, $log, $interval){
     function timer (delta) {
 
         (function t () {
-            if ($scope.step < 10) {
+            if ($scope.step < 3) {
                 console.log($scope.step);
                 $scope.step++;
                 setTimeout(t, delta);

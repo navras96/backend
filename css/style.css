@@ -202,8 +202,8 @@ html{
 	text-align: center;
 	color: #555;
 }
-.content {
-	padding: 0 1em;
+.end {
+	padding: 0 0em;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	background: WhiteSmoke;
