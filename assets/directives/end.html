@@ -1,14 +1,13 @@
-<div id="win">
+<div id="win" ng-controller="stop">
     <div class="overlay"></div>
-    <div class="visible">
+       <div class="visible">
         <h2>Конец игры! Ваши результаты</h2>
         <span>Level: {{level}}; Scope: {{score}}</span>
         <div class="end">
-            <div ng-controller='status'>
+            <div>
                 <span>Введите Ваше имя:</span>
                 <input ng-model='name' type="text">
-                <button ng-click='saveResult()' type="button">Сохранить</button>
-                <button ng-click='visiable=false' type="button" ng-show="gameover">Закрыть</button>
+                <button ng-click='stop()' type="button">Сохранить</button>
             </div>
         </div>
     </div>
