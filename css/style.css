@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+.header {
+	top:0px !important;
+	position: fixed;
+	background-color: #b0b3c0;
+	width: 110%;
+	height: 50px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+a {
+	text-decoration: none;
+	color: #000; 
+}
+.menu__item {
+	/*	display: inline; блокирует height*/ 
+	padding: 0px;
+	font-family: Lora;
+	margin: 0px;
+	line-height: 50px;
+	float: left;
+	list-style: none;
+}
+.menu__item:hover { 
+	background: #177aa1;
+}
+.menu__item a:hover {
+	color: #fff;
+}
+.menu__item a { 
+	padding: 0px 20px 0px 20px;
+	font-family: Lora;
+	line-height: 50px;
+	height: 50px;
+	display: block;
+}
+.menu {
+	width: 400px;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+.form { 
+	padding: 0;
+	position: absolute;
+	width: 9em;
+	top: 45%;
+	left: 45%;
+}
+.logo {
+    width: 160px;
+    display: block;
+    padding: 0px;
+    margin: 5px;
+    padding-left: 10%;
+    float: left;
+}
+.logo__icon {
+	display: inline-block;
+	padding: 0px;
+	background-image: url('../images/logo.png');
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+}
+.menu__item_active:hover {
+	color: #177aa1;
+	background: none;
+}
+.menu__item_active {
+	color: #177aa1;
+	padding: 0px 20px 0px 20px;
+}
+.content{
+	margin: 0em;
+	padding: 0em;
+	margin-top: 51px;
+}
+.form__button{
+	border: 3px solid #fff;
+	background: none;
+	width: 10em;
+	height: 3em;
+	color: #fff;
+}
+.form__button:hover{
+	background-color: #177aa1;
+	color: #fff;
+	border: none;
+}
+.content__paragraph{
+	padding: 1em;
+	margin: 0em;
+}
+.list{
+	padding: 3em;
+}
+.body{
+	padding: 0;
+	margin: 0;
+}
+.content__image {
+	padding: 1em;
+	margin: 0em;
+}
+html {
+	overflow-y: scroll;
+}
+/*@media screen and (min-width: 960px) {
+	html {
+		margin-right: calc(100vw - 100%);
+		margin-left: 0;
+	}
+}*/
+
+
+
+
