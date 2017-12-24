@@ -40,6 +40,7 @@ a {
     padding: 0px;
     margin: 0px;
 }
+
 .form { 
 	padding: 0;
 	position: absolute;
@@ -209,6 +210,13 @@ html{
 }
 .gamefield{
 	padding-top: 5%;
+}
+
+.top_list
+{
+	padding-top: 10%;
+	width: 200px;
+	margin: auto;
 }
 
 

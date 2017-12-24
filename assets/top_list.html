@@ -1,15 +1,5 @@
-	<div class='content'>
-		<div class="list">
-			<h2>Сраны ШОС:</h2>
-			<ol>
-			    <li>Индия</li>
-			    <li>Казахстан</li>
-			    <li>Киргизия</li>
-			    <li>Китайская Народная Республика</li>
-			    <li>Пакистан</li>
-			    <li>Россия</li>
-			    <li>Таджикистан</li>
-			    <li>Узбекистан</li>
-			</ol>			
-		</div>
-	</div>
+<div ng-controller="top_list_controller" class="top_list">
+	<p ng-repeat="user in users | orderBy:'score':!reverse | limitTo: 10">
+		{{user.name}} {{user.score}}
+	</p>
+</div>

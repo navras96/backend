@@ -1,10 +1,15 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ["ngRoute", "ngResource"]);
 
-app.controller('stop', function($scope, $log, $interval){
-    $scope.stop = function () {
-        $scope.$emit('test');
-    }
+app.config(function($routeProvider) {
+    $routeProvider
+        .when("/page/:name", {
+            templateUrl : function(page){
+                return "assets/"+page.name+".html"
+            }
+        })
+        .otherwise("/page/start");
 });
+
 app.controller('status', function($scope, $log, $interval, $http){
     $scope.user = {};
     $scope.gameover = false;
@@ -19,7 +24,6 @@ app.controller('status', function($scope, $log, $interval, $http){
         $scope.score=0;
         $scope.step=0;
         $scope.visiable=false;
-        $interval.cancel(tictac);
         $scope.ballPos={'X':50*Math.sin(tic/60),
                         'Y':20*Math.cos(tic/20)};
 
@@ -33,9 +37,7 @@ app.controller('status', function($scope, $log, $interval, $http){
     function timer (delta) {
 
         (function t () {
-            if ($scope.step < 3) {
-                console.log($scope.step);
-                $scope.step++;
+            if ($scope.step++ < 3) {
                 setTimeout(t, delta);
             } else {
                 $scope.gameover = true;
@@ -61,6 +63,24 @@ app.controller('status', function($scope, $log, $interval, $http){
     };
 });
 
+app.controller("menuController", function ($scope, $http) {
+    $http.get("http://webdev/index.php?controller=menu").success(function (data) {
+        $scope.items = data;
+    });
+});
+
+app.controller("top_list_controller",function($scope, $http){
+    $http.get("http://webdev/index.php?controller=user").success(function (data) {
+        $scope.users = data;
+    });
+});
+
+app.controller('stop', function($scope, $log, $interval){
+    $scope.stop = function () {
+        $scope.$emit('test');
+    }
+});
+
 app.directive('end', function(){
     return {
         restrict: 'E',
@@ -73,6 +93,14 @@ app.directive('game', function(){
     return {
         restrict: 'E',
         transclude: true,
-        templateUrl: './assets/directives/game.html'
+        templateUrl: './assets/directives/game.html',
     };
+});
+
+app.directive("header", function(){
+    return {
+        templateUrl:"./assets/directives/header.html",
+        replace: true,
+        restrict: 'E'
+    }
 });
