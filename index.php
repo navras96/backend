@@ -23,14 +23,15 @@ define('DATA_FOLDER',BASE_DIR.DS.'data');
 $app=new App(); // создаем экземпляр приложения
 $response = $app->run();// запускаем приложение. Его ответ помещаем в переменную
 
-if ($app->getController() =='index'){
-    echo $response;
-}
-elseif($response){
-	// если приложение ответило данными - выводим их
-    header('Content-Type: application/json');     // + заголовок, ответ будет в json
-	echo json_encode($response);
+if($response){
+    if ($app->getController() =='index'){
+        echo $response;
+    }else{
+        // если приложение ответило данными - выводим их
+        header('Content-Type: application/json');     // + заголовок, ответ будет в json
+        echo json_encode($response);
+    }
 }
 else{
-	header("HTTP/1.0 404 Not Found"); // если ответило false то выводим ошибку
+    header("HTTP/1.0 404 Not Found"); // если ответило false то выводим ошибку
 }

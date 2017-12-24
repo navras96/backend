@@ -1,9 +1,5 @@
 <div ng-controller="status">
-
-
     <button  ng-click='visiable=true' ng-show="!visiable" class=" form form__button"><b >Start</b></button>
-
-
     <game ng-if="visiable&&!gameover"> </game>
     <end ng-if="gameover"></end>
 </div>
