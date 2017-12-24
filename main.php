@@ -13,14 +13,6 @@
 </head>
 <body background="images/backgr.jpg" class="body">
     <header></header>
-
-    <div ng-controller="status">
-        <form class="form" action="#">
-            <button  ng-click='visiable=true' ng-show="!visiable" class="form__button"><b >Start</b></button>
-        </form>
-
-        <game ng-if="visiable&&!gameover"> </game>
-        <end ng-if="gameover"></end>
-    </div>
+    <ng-view></ng-view>
 </body>
 </html>
