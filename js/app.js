@@ -18,7 +18,7 @@ app.controller('status', function($scope, $log, $interval, $http){
     $scope.step=0;
     $scope.visiable=false;
     $scope.$on('test', function() {
-        $http.post('http://webdev/index.php?controller=user',  {id:"1",name: $scope.user.name,score:$scope.score});
+        $http.post('/index.php?controller=user',  {id:"1",name: $scope.user.name,score:$scope.score});
         $scope.gameover = false;
         $scope.level=0;
         $scope.score=0;
@@ -64,13 +64,13 @@ app.controller('status', function($scope, $log, $interval, $http){
 });
 
 app.controller("menuController", function ($scope, $http) {
-    $http.get("http://webdev/index.php?controller=menu").success(function (data) {
+    $http.get("/index.php?controller=menu").success(function (data) {
         $scope.items = data;
     });
 });
 
 app.controller("top_list_controller",function($scope, $http){
-    $http.get("http://webdev/index.php?controller=user").success(function (data) {
+    $http.get("/index.php?controller=user").success(function (data) {
         $scope.users = data;
     });
 });
